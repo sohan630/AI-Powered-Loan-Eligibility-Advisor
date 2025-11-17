@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Eligibility Predictor</title>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef3f7;
+            padding-top: 60px;
+            text-align: center;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #0066ff, #00a2ff);
+            padding: 14px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            margin: 0 25px;
+        }
+
+        nav a:hover { opacity: 0.85; }
+
+        h1 {
+            font-size: 34px;
+            color: #0066ff;
+            margin: 20px 0 25px;
+        }
+
+        .form-box,
+        .result-box {
+            background: white;
+            padding: 40px 30px;
+            display: inline-block;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 450px;
+            width: 90%;
+            margin-top: 0px;
+            text-align: left;
+        }
+
+        input, select, button {
+            padding: 12px;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            background: #0066ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover { background: #0052cc; }
+
+        #creditValue { font-weight: bold; }
+
+        .result-success { color: #0b7a3f; }
+        .result-fail { color: #c0392b; }
+
+        a.home {
+            display: block;
+            margin: 8px auto;
+            text-decoration: none;
+            color: white;
+            background: #0066ff;
+            padding: 10px 0;
+            border-radius: 6px;
+            width: 140px;
+        }
+
+        a.home:hover { background: #0052cc; }
+
+        @media(max-width:768px){
+            nav a { font-size: 18px; margin: 0 10px; }
+            h1 { font-size: 28px; }
+            .form-box, .result-box { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/prediction">Prediction</a>
+        <a href="/chatbot">Chatbot</a>
+    </nav>
+
+    <h1>Loan Eligibility Predictor</h1>
+
+    {% if not prediction_text %}
+    <div class="form-box">
+
+        <form action="/prediction" method="post" id="predictionForm">
+
+            <select name="gender" required>
+                <option value="">Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <select name="married" required>
+                <option value="">Married</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <select name="dependents" required>
+                <option value="">Dependents</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3+">3+</option>
+            </select>
+
+            <select name="education" required>
+                <option value="">Education</option>
+                <option value="Graduate">Graduate</option>
+                <option value="Not Graduate">Not Graduate</option>
+            </select>
+
+            <select name="employed" required>
+                <option value="">Self Employed</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <input type="number" name="ApplicantIncome" placeholder="Applicant Income" required>
+            <input type="number" name="CoapplicantIncome" placeholder="Coapplicant Income" required>
+            <input type="number" name="LoanAmount" placeholder="Loan Amount" required>
+            <input type="number" name="Loan_Amount_Term" placeholder="Loan Term (days)" required>
+
+            <label>Credit Score (0 - 1000):</label>
+            <input type="range" id="creditSlider" min="0" max="1000" value="500" oninput="updateCreditValue(this.value)">
+            <p>Credit Score: <span id="creditValue">500</span></p>
+
+            <!-- FIXED: guarantee value is never empty -->
+            <input type="hidden" id="credit" name="credit" value="0">
+
+            <select name="area" required>
+                <option value="">Property Area</option>
+                <option value="Rural">Rural</option>
+                <option value="Semiurban">Semiurban</option>
+                <option value="Urban">Urban</option>
+            </select>
+
+            <button type="submit">Check Eligibility</button>
+        </form>
+
+    </div>
+    {% endif %}
+
+    {% if prediction_text %}
+    <div class="result-box">
+        <p class="{% if prediction_text.lower().startswith('loan status is yes') %}result-success{% else %}result-fail{% endif %}">
+            {{ prediction_text }}
+        </p>
+
+        <a class="home" href="/prediction">Predict Again</a>
+        <a class="home" href="/">Home</a>
+    </div>
+    {% endif %}
+
+    <script>
+        function updateCreditValue(v){
+            document.getElementById("creditValue").innerText = v;
+        }
+
+        function convertCreditValue(){
+            let c = parseInt(document.getElementById("creditSlider").value);
+            document.getElementById("credit").value = (c >= 850 && c <= 1000) ? 1 : 0;
+        }
+
+        // FIXED: Always set credit value before form submits
+        document.getElementById("predictionForm").addEventListener("submit", function(){
+            convertCreditValue();
+        });
+    </script>
+
+</body>
+</html>

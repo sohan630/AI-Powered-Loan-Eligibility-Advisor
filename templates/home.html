@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Eligibility System</title>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: #eef3f7;
+            padding-top: 60px; /* reduced */
+        }
+
+        /* Gradient Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #0066ff, #00a2ff);
+            padding: 14px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            z-index: 1000;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 25px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover { opacity: 0.85; }
+
+        .home-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 20px 40px;
+        }
+
+        .home-content {
+            background: #fff;
+            padding: 60px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-top: 10px; /* reduced space */
+        }
+
+        h1 { color: #0066ff; font-size: 46px; margin-bottom: 20px; }
+
+        p {
+            font-size: 21px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .start-button {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .start-button a {
+            background: #0066ff;
+            color: white;
+            padding: 16px 48px;
+            font-size: 20px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .start-button a:hover { background: #0052cc; }
+
+    </style>
+
+</head>
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/prediction">Prediction</a>
+          <a href="/chatbot">Chatbot</a>
+    </nav>
+
+    <div class="home-container">
+
+        <div class="home-content">
+            <h1>AI Powered Loan Eligibility Prediction System</h1>
+
+            <p>Welcome to our Loan Eligibility Prediction System. Using advanced AI techniques, this platform provides instant guidance on whether you are eligible for a loan.</p>
+
+            <p>Simply provide your details and get a clear, quick prediction to make your financial decisions easier and faster.</p>
+
+            <p>Our system is designed to be intuitive, accurate, and user-friendly, helping individuals and institutions alike.</p>
+
+            <p>The prediction engine considers multiple factors such as income, credit score, loan amount, and property details to deliver a reliable result.</p>
+
+            <p>This platform is ideal for first-time applicants, busy professionals, and financial advisors seeking quick eligibility checks.</p>
+
+            <p>With real-time results, you can make informed decisions without waiting for lengthy bank processing times.</p>
+
+            <p>Our goal is to simplify the loan approval process and give you the confidence to take the next step in your financial planning.</p>
+        </div>
+
+        <div class="start-button">
+            <a href="/prediction">Start Prediction</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
