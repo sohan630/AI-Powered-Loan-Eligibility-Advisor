@@ -1,84 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About Us - Loan Eligibility System</title>
+{% extends "layout.html" %}
+{% block content %}
+{% set title = "About Us - Loan Eligibility System" %}
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<style>
+    .about-container {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #eef3f7;
-            padding-top: 70px;
-        }
+    h1 {
+        color: #0066ff;
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 14px 0;
-            background: linear-gradient(90deg, #0066ff, #00a2ff);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-            text-align: center;
-        }
+    h2 {
+        color: #004ecc;
+        margin-top: 25px;
+        margin-bottom: 12px;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 25px;
-            font-size: 20px;
-            font-weight: bold;
-        }
+    p {
+        font-size: 19px;
+        margin: 12px 0;
+        line-height: 1.6;
+        color: #444;
+    }
 
-        .about-container {
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-        }
+    ul {
+        margin: 10px 0 20px 30px;
+        font-size: 18px;
+        color: #444;
+    }
 
-        h1 {
-            color: #0066ff;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            color: #004ecc;
-            margin-top: 25px;
-            margin-bottom: 12px;
-        }
-
-        p {
-            font-size: 19px;
-            margin: 12px 0;
-            line-height: 1.6;
-            color: #444;
-        }
-
-        ul {
-            margin: 10px 0 20px 30px;
-            font-size: 18px;
-            color: #444;
-        }
-
-        ul li {
-            margin: 8px 0;
-        }
-    </style>
-</head>
-
-<body>
-
-<nav>
-    <a href="/">Home</a>
-    <a href="/about">About Us</a>
-    <a href="/prediction">Prediction</a>
-     <a href="/chatbot">Chatbot</a>
-</nav>
+    ul li {
+        margin: 8px 0;
+    }
+</style>
 
 <div class="about-container">
     <h1>About Our Project</h1>
@@ -133,5 +95,4 @@
     </p>
 </div>
 
-</body>
-</html>
+{% endblock %}

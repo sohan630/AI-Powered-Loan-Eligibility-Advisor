@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block content %}
+{% set title = "Signup - Loan Eligibility System" %}
+
+<style>
+    .signup-box {
+        width: 450px;
+        margin: 40px auto;
+        background: white;
+        padding: 35px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        text-align: center;
+    }
+
+    h2 {
+        color: #0066ff;
+        margin-bottom: 25px;
+    }
+
+    input {
+        width: 90%;
+        padding: 12px;
+        margin: 12px 0;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+
+    button {
+        background: #00a2ff;
+        color: white;
+        padding: 12px 40px;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    button:hover { background: #0088dd; }
+
+    .error {
+        color: red;
+        margin-top: 10px;
+    }
+
+    .success {
+        color: green;
+        margin-top: 10px;
+    }
+</style>
+
+<div class="signup-box">
+    <h2>Create Account</h2>
+
+    <form action="/signup" method="POST">
+
+        <!-- ADDED NAME FIELD (Fix for BadRequestKeyError) -->
+        <input type="text" name="name" placeholder="Enter Name" required>
+
+        <input type="email" name="email" placeholder="Enter Email" required>
+
+        <input type="password" name="password" placeholder="Choose Password" required>
+
+        <button type="submit">Signup</button>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        {% if success %}
+            <p class="success">{{ success }}</p>
+        {% endif %}
+    </form>
+
+    <p style="margin-top: 15px;">
+        Already have an account? <a href="/login" style="color:#0066ff;">Login</a>
+    </p>
+</div>
+
+{% endblock %}
