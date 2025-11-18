@@ -1,0 +1,119 @@
+/* ---------- GENERAL RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ---------- BODY ---------- */
+body {
+    background: #eef3f7;
+    color: #333;
+    padding-top: 70px;  /* space for navbar */
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #0a3d62;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f1c40f;
+}
+
+/* ---------- PAGE CONTENT ---------- */
+.page-container {
+    margin: 30px auto;
+    width: 90%;
+    max-width: 900px;
+}
+
+/* ---------- FORMS ---------- */
+form {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0a3d62;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #065289;
+}
+
+/* ---------- RESULTS ---------- */
+.result-box {
+    background: #fff;
+    padding: 20px;
+    margin-top: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.success {
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    color: #777;
+}
