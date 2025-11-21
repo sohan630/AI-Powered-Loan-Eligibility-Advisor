@@ -211,7 +211,7 @@ Mohammad Sohan
 
 AI Intern | Infosys Springboard
 
-Email: sivanandini.sk@gmail.com   |
+Email: sohanmohammad2806@gmail.com   |
 [🔗 LinkedIn ](https://www.linkedin.com/in/mohammad-sohan-3082b22a8)  | 
 [🔗 GitHub ](https://github.com/sohan630)
  
