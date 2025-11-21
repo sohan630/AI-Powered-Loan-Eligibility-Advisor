@@ -2,7 +2,7 @@
 
 > *Empowering smarter financial decisions with artificial intelligence.*
 
-![Project Banner](https://imgs.search.brave.com/-9xXaeHOiogffTdEBw4mAV1ZrpjcfLKoWbtS0-nf734/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cHJvZC53ZWJzaXRl/LWZpbGVzLmNvbS82/NTZlN2ZiY2Q5YzA2/NjQzNDc5OTZlNzUv/NjU5NDQ5ZGI2M2Jm/MmRjNGNkNDhlM2Y5/X2NyZWRpdC1zY29y/ZS0yLnBuZw)  
+![Project Banner](https://imgs.search.brave.com/F0GOmkCisL06URKg6NNAcVmpPyBcAahYKYhZWNpMYkY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4t/Yml6MnguYml6MmNy/ZWRpdC5jb20vd3At/Y29udGVudC91cGxv/YWRzL2ZseS1pbWFn/ZXMvNzA2MS9VUy1O/ZXctQnVzaW5lc3Mt/c3RyYXRlZ2llcy1h/bmQtYXV0b21hdGlv/bi10by1ncm93LXlv/dXItbmV0LWludGVy/ZXN0LW1hcmdpbi1p/bi0yMDI2LTc4MHg0/MjYuanBn)  
 
 ---
 
